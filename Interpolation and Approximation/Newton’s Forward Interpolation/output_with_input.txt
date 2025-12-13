@@ -1,0 +1,12 @@
+Enter num of data points: 4
+Enter x values (ascending, equally spaced): 3 5 7 9
+Enter y values: 180 150 120 90
+Enter value to be interpolated: 4
+
+Forward Difference Table:
+      180.00       -30.00         0.00         0.00
+      150.00       -30.00         0.00
+      120.00       -30.00
+       90.00
+
+Interpolated value at x = 4.00 f(x) = 165.00
