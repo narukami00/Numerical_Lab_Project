@@ -1,0 +1,9 @@
+Enter num of data points: Enter x values: Enter y values: Enter value to be interpolated: 
+Backward Difference Table:
+28.06  0.00  0.00  0.00  0.00 
+30.19  2.13  2.13  2.13  2.13 
+32.75  2.56  0.43 -1.70 -3.83 
+34.94  2.19 -0.37 -0.80  0.90 
+40.00  5.06  2.87  3.24  4.04 
+
+Interpolated value at x = 33.00 is f(x) = 33.27
