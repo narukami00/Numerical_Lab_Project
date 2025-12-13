@@ -1,0 +1,15 @@
+Test Case 1:
+Solution : 
+x1 = 2
+x2 = 3
+x3 = -1
+
+Test Case 2:
+No solution
+
+Test Case 3:
+Infinite solutions
+
+Test Case 4:
+No solution
+

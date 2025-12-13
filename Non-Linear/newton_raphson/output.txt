@@ -1,0 +1,18 @@
+Test Case 1:
+f(x) = x^3-2.00x^2-4.00x+5.00
+Root 1 = -1.79129 After 5 iterations
+Root 2 = 1 After 3 iterations
+Root 3 = 2.79129 After 3 iterations
+
+Test Case 2:
+f(x) = x^2-5.00x+6.00
+Root 1 = 2 After 3 iterations
+Root 2 = 3 After 1 iterations
+
+Test Case 3:
+f(x) = x^4-5.00x^2+4.00
+Root 1 = -2 After 5 iterations
+Root 2 = -1 After 1 iterations
+Root 3 = 1 After 4 iterations
+Root 4 = 2 After 1 iterations
+
