@@ -1,0 +1,8 @@
+Degree of the function:
+Coefficients of the function:
+Upper limit:
+Lower limit:
+Number of intervals:
+The polynomial:
+f(x) = 1x^3 + 1x^3 + 0x^2 + 1x^1 + 1x^0
+Definite integral of the polynomial = 27.75
