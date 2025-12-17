@@ -1,0 +1,50 @@
+GAUSS-JORDAN ELIMINATION METHOD
+================================
+
+OVERVIEW:
+---------
+Gauss-Jordan Elimination is an extension of Gauss Elimination that transforms the coefficient matrix into a diagonal form (reduced row echelon form). Unlike Gauss Elimination, it eliminates both above and below the pivot element, eliminating the need for back substitution.
+
+MATHEMATICAL FOUNDATION:
+------------------------
+For a system Ax = b, the method transforms the augmented matrix [A|b] into the form [I|x], where I is the identity matrix and x is the solution vector.
+
+ALGORITHM STEPS:
+----------------
+1. Forward Elimination (Similar to Gauss):
+   - Transform matrix to upper triangular form
+   - For each pivot position (k,k):
+     - Make the pivot element 1 by dividing the entire row
+     - Eliminate all elements below the pivot
+
+2. Backward Elimination:
+   - Starting from the last row, moving upward:
+   - Eliminate all elements above each pivot
+   - Result: Diagonal matrix with 1's on diagonal
+
+3. Solution:
+   - Solution is directly available in the augmented column
+   - No back substitution needed
+
+PIVOT NORMALIZATION:
+--------------------
+For each pivot row k:
+- Divide entire row by a[k][k]
+- This makes the diagonal element equal to 1
+
+TIME COMPLEXITY:
+----------------
+O(n^3) - slightly more operations than Gauss Elimination due to backward elimination
+
+ADVANTAGES:
+-----------
+- No back substitution required
+- Solution obtained directly
+- Can compute matrix inverse simultaneously
+- Better for finding matrix inverse
+
+DISADVANTAGES:
+--------------
+- More computational steps than Gauss Elimination
+- Still susceptible to round-off errors
+- Requires non-zero pivot elements

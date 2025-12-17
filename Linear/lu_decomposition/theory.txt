@@ -1,0 +1,69 @@
+LU DECOMPOSITION METHOD
+=======================
+
+OVERVIEW:
+---------
+LU Decomposition factors a square matrix A into the product of a lower triangular matrix L and an upper triangular matrix U, such that A = LU. This decomposition is particularly useful for solving multiple systems with the same coefficient matrix.
+
+MATHEMATICAL FOUNDATION:
+------------------------
+For matrix A:
+A = LU
+
+Where:
+- L is a lower triangular matrix (elements above diagonal are 0)
+- U is an upper triangular matrix (elements below diagonal are 0)
+
+To solve Ax = b:
+1. Decompose: A = LU
+2. Solve Ly = b (forward substitution)
+3. Solve Ux = y (back substitution)
+
+DOOLITTLE'S METHOD:
+-------------------
+This is the most common LU decomposition where:
+- L has 1's on the diagonal
+- U has the actual pivot values on diagonal
+
+Algorithm:
+For k = 1 to n:
+  For j = k to n:
+    u[k][j] = a[k][j] - sum(l[k][p] * u[p][j]) for p = 1 to k-1
+  
+  For i = k+1 to n:
+    l[i][k] = (a[i][k] - sum(l[i][p] * u[p][k])) / u[k][k] for p = 1 to k-1
+
+CROUT'S METHOD:
+---------------
+Alternative where:
+- U has 1's on the diagonal
+- L has the actual pivot values on diagonal
+
+FORWARD SUBSTITUTION (Ly = b):
+-------------------------------
+For i = 1 to n:
+  y[i] = (b[i] - sum(l[i][j] * y[j])) / l[i][i] for j = 1 to i-1
+
+BACK SUBSTITUTION (Ux = y):
+----------------------------
+For i = n down to 1:
+  x[i] = (y[i] - sum(u[i][j] * x[j])) / u[i][i] for j = i+1 to n
+
+TIME COMPLEXITY:
+----------------
+- Decomposition: O(n^3)
+- Each solve: O(n^2)
+- Efficient for multiple right-hand sides
+
+ADVANTAGES:
+-----------
+- Efficient for multiple systems with same A
+- Decomposition done once, reused multiple times
+- Can compute determinant easily: det(A) = product of U diagonal elements
+- Numerically stable with partial pivoting
+
+DISADVANTAGES:
+--------------
+- Requires additional storage for L and U
+- Not all matrices have LU decomposition
+- May need pivoting for numerical stability

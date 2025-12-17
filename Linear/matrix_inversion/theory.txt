@@ -1,0 +1,86 @@
+MATRIX INVERSION METHOD
+=======================
+
+OVERVIEW:
+---------
+Matrix inversion finds the inverse of a square matrix A, denoted as A^(-1), such that A * A^(-1) = I, where I is the identity matrix. For solving Ax = b, if A^(-1) exists, then x = A^(-1) * b.
+
+MATHEMATICAL FOUNDATION:
+------------------------
+For an n×n matrix A, the inverse A^(-1) exists if and only if:
+- det(A) ≠ 0 (A is non-singular)
+- A is a square matrix
+- A has full rank
+
+Property: A * A^(-1) = A^(-1) * A = I
+
+GAUSS-JORDAN METHOD FOR INVERSION:
+-----------------------------------
+The most common method uses Gauss-Jordan elimination on [A|I]:
+
+1. Form augmented matrix [A|I] where I is the identity matrix
+2. Apply row operations to transform A to I
+3. The result is [I|A^(-1)]
+
+Algorithm Steps:
+For each column k from 1 to n:
+  a. Make diagonal element 1 (divide row k by a[k][k])
+  b. Eliminate all other elements in column k
+  c. Apply same operations to the right side (identity part)
+
+COFACTOR METHOD:
+----------------
+Alternative approach:
+A^(-1) = (1/det(A)) * adj(A)
+
+Where:
+- adj(A) is the adjugate (transpose of cofactor matrix)
+- Cofactor C[i][j] = (-1)^(i+j) * M[i][j]
+- M[i][j] is the minor (determinant of submatrix)
+
+VERIFICATION:
+-------------
+After finding A^(-1):
+- Multiply A * A^(-1)
+- Result should be identity matrix I
+- Check if diagonal elements = 1, off-diagonal = 0
+
+TIME COMPLEXITY:
+----------------
+- Gauss-Jordan method: O(n^3)
+- Cofactor method: O(n^4) - less efficient
+
+NUMERICAL CONSIDERATIONS:
+--------------------------
+- Avoid division by very small numbers
+- Use partial pivoting for stability
+- Check condition number of matrix
+- Ill-conditioned matrices have unstable inverses
+
+ADVANTAGES:
+-----------
+- Direct method for solving Ax = b
+- Useful when solving multiple systems
+- Gives complete inverse matrix
+
+DISADVANTAGES:
+--------------
+- Computationally expensive (O(n^3))
+- Numerically unstable for ill-conditioned matrices
+- Not recommended for sparse matrices
+- Unnecessary for solving single linear system
+
+SPECIAL CASES:
+--------------
+1. Diagonal Matrix: Inverse has reciprocals on diagonal
+2. Orthogonal Matrix: A^(-1) = A^T
+3. Symmetric Matrix: Inverse is also symmetric
+4. Singular Matrix: No inverse exists
+
+CONDITION NUMBER:
+-----------------
+Measures sensitivity to errors:
+cond(A) = ||A|| * ||A^(-1)||
+
+- cond(A) ≈ 1: Well-conditioned (stable)
+- cond(A) >> 1: Ill-conditioned (unstable)

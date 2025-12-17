@@ -1,0 +1,122 @@
+SECANT METHOD
+=============
+
+OVERVIEW:
+---------
+The Secant Method is a root-finding algorithm that uses a succession of roots of secant lines to approximate the root of a function. It is similar to Newton-Raphson but approximates the derivative using finite differences, eliminating the need for explicit derivative calculation.
+
+MATHEMATICAL FOUNDATION:
+------------------------
+Instead of using the derivative f'(x_n) as in Newton-Raphson, the Secant Method approximates it using:
+
+f'(x_n) ≈ (f(x_n) - f(x_{n-1})) / (x_n - x_{n-1})
+
+ITERATION FORMULA:
+------------------
+x_{n+1} = x_n - f(x_n) * (x_n - x_{n-1}) / (f(x_n) - f(x_{n-1}))
+
+Or equivalently:
+x_{n+1} = (x_{n-1} * f(x_n) - x_n * f(x_{n-1})) / (f(x_n) - f(x_{n-1}))
+
+ALGORITHM STEPS:
+----------------
+1. Start with two initial guesses x₀ and x₁
+2. Compute f(x₀) and f(x₁)
+3. Calculate next approximation using formula above
+4. Update: x_{n-1} = x_n, x_n = x_{n+1}
+5. Check convergence criteria
+6. Repeat from step 3 until convergence
+
+CONVERGENCE:
+------------
+- Superlinear convergence
+- Convergence order: α ≈ 1.618 (golden ratio)
+- Faster than linear, slower than quadratic
+- Requires two initial guesses
+- More sensitive to initial values than bisection
+
+Error relation:
+|e_{n+1}| ≈ C|e_n|^α where α = (1 + √5)/2 ≈ 1.618
+
+STOPPING CRITERIA:
+------------------
+1. |f(x_n)| < tolerance
+2. |x_{n+1} - x_n| < tolerance
+3. |x_{n+1} - x_n| / |x_n| < relative tolerance
+4. |f(x_n) - f(x_{n-1})| < tolerance
+5. Maximum iterations reached
+
+TIME COMPLEXITY:
+----------------
+O(n) where n is number of iterations (typically fewer than bisection)
+
+ADVANTAGES:
+-----------
+- Does not require derivative calculation
+- Faster convergence than bisection and false position
+- Only requires function evaluations
+- Simpler than Newton-Raphson (no derivative needed)
+- Good compromise between speed and simplicity
+- One function evaluation per iteration
+
+DISADVANTAGES:
+--------------
+- Requires two initial guesses
+- May fail if f(x_n) ≈ f(x_{n-1})
+- Does not bracket the root (may diverge)
+- Less reliable than bracketing methods
+- May converge slowly if initial guesses are poor
+- Can fail near local extrema
+
+COMPARISON WITH OTHER METHODS:
+-------------------------------
+vs Newton-Raphson:
+- Slightly slower convergence
+- No derivative needed
+- One function evaluation vs derivative + function
+
+vs False Position:
+- Faster convergence
+- Does not maintain bracket
+- Less reliable
+
+vs Bisection:
+- Much faster convergence
+- No bracketing guarantee
+- Less robust
+
+FAILURE CASES:
+--------------
+1. f(x_n) = f(x_{n-1}): Division by zero
+2. Poor initial guesses: Divergence
+3. Near inflection points: Slow convergence
+4. Multiple roots: May miss or oscillate
+
+GEOMETRIC INTERPRETATION:
+-------------------------
+- Draw secant line through (x_{n-1}, f(x_{n-1})) and (x_n, f(x_n))
+- Find x-intercept of this secant line
+- This intercept becomes x_{n+1}
+- Unlike tangent in Newton's method
+
+INITIAL GUESS SELECTION:
+------------------------
+- Choose x₀ and x₁ close to expected root
+- Can use one iteration of bisection
+- Should be on opposite sides of root ideally
+- Closer guesses generally converge faster
+
+MODIFIED SECANT METHOD:
+-----------------------
+Uses single initial guess with perturbation:
+x_{n+1} = x_n - f(x_n) * δ * x_n / (f(x_n + δ * x_n) - f(x_n))
+
+Where δ is a small perturbation (e.g., 10^-4)
+
+PRACTICAL CONSIDERATIONS:
+-------------------------
+1. Monitor for division by near-zero values
+2. Implement maximum iteration limit
+3. Check for oscillation between two values
+4. Consider switching to bisection if diverging
+5. Use multiple starting points for reliability

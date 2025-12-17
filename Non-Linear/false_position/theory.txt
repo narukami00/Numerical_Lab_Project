@@ -1,0 +1,83 @@
+FALSE POSITION METHOD (REGULA FALSI)
+=====================================
+
+OVERVIEW:
+---------
+The False Position Method, also known as Regula Falsi, is a root-finding algorithm that combines features of the Bisection Method and the Secant Method. It uses linear interpolation to find the root, providing faster convergence than bisection while maintaining the bracketing property.
+
+MATHEMATICAL FOUNDATION:
+------------------------
+The method finds the root by drawing a straight line between points (a, f(a)) and (b, f(b)), and determining where this line crosses the x-axis.
+
+Formula for new approximation:
+c = b - (f(b) * (b - a)) / (f(b) - f(a))
+
+Or equivalently:
+c = (a*f(b) - b*f(a)) / (f(b) - f(a))
+
+ALGORITHM STEPS:
+----------------
+1. Initialization:
+   - Choose interval [a, b] such that f(a) * f(b) < 0
+   - Set tolerance ε and maximum iterations
+
+2. Calculate Intersection Point:
+   - c = b - (f(b) * (b - a)) / (f(b) - f(a))
+   - Evaluate f(c)
+
+3. Update Interval:
+   - If |f(c)| < ε: c is the root (stop)
+   - If f(a) * f(c) < 0: root in [a, c], set b = c
+   - If f(c) * f(b) < 0: root in [c, b], set a = c
+
+4. Repeat until convergence
+
+CONVERGENCE:
+------------
+- Superlinear convergence (faster than bisection)
+- Convergence rate: approximately 1.618 (golden ratio)
+- Always converges if f(a) * f(b) < 0
+- May converge slowly if one endpoint remains fixed
+
+MODIFIED FALSE POSITION:
+------------------------
+To prevent one endpoint from remaining fixed:
+- Illinois Method
+- Anderson-Bjork Method
+- Pegasus Method
+
+These modify f(a) or f(b) when the same endpoint is retained multiple times.
+
+STOPPING CRITERIA:
+------------------
+1. |f(c)| < tolerance
+2. |c_new - c_old| < tolerance
+3. |f(c)| / |f(a)| or |f(c)| / |f(b)| < tolerance
+4. Maximum iterations reached
+
+TIME COMPLEXITY:
+----------------
+O(n) where n is number of iterations (fewer than bisection)
+
+ADVANTAGES:
+-----------
+- Faster convergence than Bisection Method
+- Maintains bracketing (always converges)
+- Does not require derivative
+- More efficient use of function evaluations
+- Geometrically intuitive
+
+DISADVANTAGES:
+--------------
+- May converge slowly if function is highly curved
+- One endpoint may remain fixed for many iterations
+- Slower than Newton-Raphson and Secant methods
+- Cannot find roots of even multiplicity
+- Requires initial bracket
+
+SPECIAL CONSIDERATIONS:
+-----------------------
+1. Function must be continuous
+2. Initial bracket must contain root
+3. Works best when function is nearly linear
+4. Performance degrades for highly nonlinear functions

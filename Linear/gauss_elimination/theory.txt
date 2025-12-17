@@ -1,0 +1,45 @@
+GAUSS ELIMINATION METHOD
+========================
+
+OVERVIEW:
+---------
+Gauss Elimination is a systematic method for solving systems of linear equations. It transforms the coefficient matrix into an upper triangular form through elementary row operations, after which back substitution is used to find the solution.
+
+MATHEMATICAL FOUNDATION:
+------------------------
+For a system of linear equations Ax = b, where:
+- A is an n×n coefficient matrix
+- x is the vector of unknowns
+- b is the constant vector
+
+The method converts the augmented matrix [A|b] into upper triangular form.
+
+ALGORITHM STEPS:
+----------------
+1. Forward Elimination:
+   - For each column k from 1 to n-1:
+     - Select pivot element a[k][k]
+     - For each row i below row k:
+       - Calculate multiplier: m = a[i][k] / a[k][k]
+       - Update row i: a[i][j] = a[i][j] - m * a[k][j] for all j
+
+2. Back Substitution:
+   - Calculate x[n] = b[n] / a[n][n]
+   - For i = n-1 down to 1:
+     - x[i] = (b[i] - sum(a[i][j] * x[j])) / a[i][i]
+
+TIME COMPLEXITY:
+----------------
+O(n^3) for forward elimination + O(n^2) for back substitution = O(n^3)
+
+ADVANTAGES:
+-----------
+- Straightforward implementation
+- Directly solves the system
+- No iteration required
+
+DISADVANTAGES:
+--------------
+- Susceptible to round-off errors
+- Fails if pivot element is zero
+- Not suitable for large sparse matrices

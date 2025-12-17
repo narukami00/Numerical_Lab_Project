@@ -1,0 +1,92 @@
+NEWTON-RAPHSON METHOD
+=====================
+
+OVERVIEW:
+---------
+The Newton-Raphson Method is an iterative numerical technique for finding roots of a real-valued function. It uses the tangent line at the current approximation to find a better approximation. It is one of the fastest converging root-finding methods when properly initialized.
+
+MATHEMATICAL FOUNDATION:
+------------------------
+Using Taylor series expansion of f(x) around point x₀:
+f(x) ≈ f(x₀) + f'(x₀)(x - x₀)
+
+Setting f(x) = 0 and solving for x:
+x = x₀ - f(x₀) / f'(x₀)
+
+ITERATION FORMULA:
+------------------
+x_{n+1} = x_n - f(x_n) / f'(x_n)
+
+Where:
+- x_n is the current approximation
+- f(x_n) is the function value at x_n
+- f'(x_n) is the derivative at x_n
+- x_{n+1} is the next approximation
+
+ALGORITHM STEPS:
+----------------
+1. Start with initial guess x₀
+2. Compute f(x_n) and f'(x_n)
+3. Calculate next approximation: x_{n+1} = x_n - f(x_n) / f'(x_n)
+4. Check stopping criteria
+5. If not converged, set x_n = x_{n+1} and repeat from step 2
+
+CONVERGENCE:
+------------
+- Quadratic convergence near the root
+- Number of correct digits approximately doubles each iteration
+- Convergence condition: |f'(x)| should not be too small
+- Requires good initial guess
+
+Convergence Rate:
+|e_{n+1}| ≈ C|e_n|²
+
+Where e_n is the error at iteration n
+
+STOPPING CRITERIA:
+------------------
+1. |f(x_n)| < tolerance
+2. |x_{n+1} - x_n| < tolerance
+3. |x_{n+1} - x_n| / |x_n| < relative tolerance
+4. Maximum iterations reached
+
+DERIVATIVE CALCULATION:
+-----------------------
+Analytical: f'(x) computed symbolically
+Numerical: f'(x) ≈ (f(x + h) - f(x)) / h (finite difference)
+
+TIME COMPLEXITY:
+----------------
+O(n) iterations, typically 4-6 iterations for good convergence
+
+ADVANTAGES:
+-----------
+- Fastest convergence (quadratic) among simple methods
+- Requires few iterations
+- Highly efficient near the root
+- Can be extended to systems of equations
+- Widely applicable
+
+DISADVANTAGES:
+--------------
+- Requires derivative calculation
+- May fail if f'(x) = 0 or very small
+- Sensitive to initial guess
+- May diverge or oscillate
+- Cannot guarantee convergence
+- May overshoot and diverge for poor initial guess
+
+FAILURE CASES:
+--------------
+1. f'(x_n) = 0: Division by zero
+2. Stationary points: Method gets stuck
+3. Local extrema: May jump to wrong region
+4. Oscillation: Between two points
+5. Divergence: Moving away from root
+
+INITIAL GUESS SELECTION:
+------------------------
+- Plot the function to identify approximate location
+- Use bisection for few iterations first
+- Domain knowledge of the problem
+- Multiple starting points for comparison

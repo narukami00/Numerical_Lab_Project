@@ -1,0 +1,76 @@
+BISECTION METHOD
+================
+
+OVERVIEW:
+---------
+The Bisection Method is a root-finding algorithm that repeatedly divides an interval in half and selects the subinterval where the root must lie. It is based on the Intermediate Value Theorem and is one of the simplest and most reliable bracketing methods.
+
+MATHEMATICAL FOUNDATION:
+------------------------
+Intermediate Value Theorem:
+If f(x) is continuous on [a,b] and f(a) * f(b) < 0, then there exists at least one root c in (a,b) such that f(c) = 0.
+
+ALGORITHM STEPS:
+----------------
+1. Initialization:
+   - Choose initial interval [a, b] such that f(a) * f(b) < 0
+   - Set tolerance ε and maximum iterations
+
+2. Iteration:
+   - Calculate midpoint: c = (a + b) / 2
+   - Evaluate f(c)
+   
+3. Update Interval:
+   - If |f(c)| < ε or |b - a| < ε: c is the root (stop)
+   - If f(a) * f(c) < 0: root lies in [a, c], set b = c
+   - If f(c) * f(b) < 0: root lies in [c, b], set a = c
+   
+4. Repeat step 2-3 until convergence
+
+CONVERGENCE:
+------------
+- Always converges if initial conditions are satisfied
+- Linear convergence rate
+- Error reduces by half in each iteration
+- After n iterations: |error| ≤ (b - a) / 2^n
+
+NUMBER OF ITERATIONS:
+---------------------
+n ≥ log₂((b - a) / ε)
+
+Where:
+- (b - a) is initial interval width
+- ε is desired accuracy
+
+STOPPING CRITERIA:
+------------------
+1. |f(c)| < tolerance
+2. |b - a| < tolerance
+3. Maximum iterations reached
+
+TIME COMPLEXITY:
+----------------
+O(log n) where n depends on desired accuracy
+
+ADVANTAGES:
+-----------
+- Always converges if initial bracket is valid
+- Simple to implement and understand
+- Guaranteed to find a root
+- Does not require derivative calculation
+- Robust and reliable
+
+DISADVANTAGES:
+--------------
+- Slow convergence (linear rate)
+- Requires initial interval where f(a) * f(b) < 0
+- Cannot find roots where function touches x-axis (even multiplicity)
+- Finds only one root even if multiple exist
+- Not efficient for finding all roots
+
+SPECIAL CASES:
+--------------
+1. If f(a) = 0: a is the root
+2. If f(b) = 0: b is the root
+3. If f(a) * f(b) > 0: method fails (no guarantee of root)
+4. Multiple roots in interval: finds only one
