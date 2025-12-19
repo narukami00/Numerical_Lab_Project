@@ -1,0 +1,39 @@
+OVERVIEW:
+Transcendental Regression is a curve-fitting technique used when the relationship between the independent variable (x) and dependent variable (y) involves transcendental functions such as exponential, logarithmic, or power functions. These functions cannot be represented by simple polynomials.This regression method is widely used in scientific and engineering problems where growth, decay, or scaling behavior is observed.
+
+MATHEMATICAL FOUNDATION:
+Transcendental regression is based on the Least Squares Method, similar to linear and polynomial regression.Many transcendental models are transformed into linear form using logarithmic transformations so that linear regression techniques can be applied.
+
+Error for each data point:
+ei = yi − ŷi
+
+ALGORITHM STEPS:
+1.Read number of data points (n)
+2.Read n pairs of x and y values
+3.Choose appropriate transcendental model (exponential, logarithmic, or power)
+4.Apply logarithmic transformation to convert the model into linear form
+5.Compute required summations for least squares
+6.Solve for regression coefficients
+7.Convert coefficients back to original model form
+8.Display the final transcendental regression equation
+
+CONVERGENCE:
+Produces a unique solution if data satisfies model assumptions
+Accuracy depends on correct model selection
+Sensitive to noisy data after transformation
+
+STOPPING CONDITION:
+Single computation (non-iterative)
+Terminates after coefficient estimation
+
+ADVANTAGES:
+Models exponential and logarithmic behavior effectively
+Suitable for growth and decay phenomena
+Simple implementation using transformations
+Extends applicability beyond polynomial models
+
+DISADVANTAGES:
+Requires correct model assumption
+Logarithmic transformation not possible for non-positive values
+Sensitive to outliers
+Limited to specific functional forms
