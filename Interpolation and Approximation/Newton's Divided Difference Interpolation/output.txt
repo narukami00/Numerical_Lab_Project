@@ -1,0 +1,14 @@
+Enter num of data points: Enter x values:
+Enter y values:
+Enter value to be interpolated:
+
+Divided Difference Table:
+0.000000 0.462098 -0.051874 0.007864 
+1.386294 0.202728 -0.020416 
+1.791750 0.182312 
+1.609438 
+
+Interpolated value at x=2.000000 is 0.628762
+
+Considering last point as extra point
+Truncatation error: 0.062916

@@ -19,6 +19,9 @@ double simpson(double a, double b, double h, vector<double> crr){
 }
 
 int main(){
+    freopen("input.txt", "r", stdin);
+    freopen("output.txt", "w", stdout);
+    
     cout<<"Degree of the function:\n";
     int d; cin>>d;
     cout<<"Coefficients of the function:\n";
