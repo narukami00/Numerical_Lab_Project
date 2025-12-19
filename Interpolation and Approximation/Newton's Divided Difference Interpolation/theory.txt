@@ -1,0 +1,43 @@
+NEWTON'S DIVIDED DIFFERENCE INTERPOLATION METHOD
+==============================================
+
+OVERVIEW:
+---------
+Newton's Divided Difference Interpolation is a numerical method used to approximate the value of a function for a given x, using a set of data points. A key advantage of this method is that it does not require the data points to be equally spaced, making it more versatile than Newton's Forward and Backward interpolation methods.
+
+MATHEMATICAL FOUNDATION:
+------------------------
+Given a set of n+1 values (x0, y0), (x1, y1), ..., (xn, yn).
+
+The interpolation polynomial P(x) is given by:
+P(x) = f[x0] + (x - x0)f[x0, x1] + (x - x0)(x - x1)f[x0, x1, x2] + ...
+
+Where f[] denotes the divided difference:
+- 0th order: f[xi] = yi
+- 1st order: f[xi, xi+1] = (f[xi+1] - f[xi]) / (xi+1 - xi)
+- 2nd order: f[xi, xi+1, xi+2] = (f[xi+1, xi+2] - f[xi, xi+1]) / (xi+2 - xi)
+
+ALGORITHM STEPS:
+----------------
+1. Input the number of data points n.
+2. Input the x and y values. Note that x values do not need to be equally spaced.
+3. Construct the Divided Difference Table:
+   - Calculate 1st order differences for all adjacent pairs.
+   - Calculate 2nd order differences using 1st order differences.
+   - Continue until the n-th order difference is found.
+4. Apply the interpolation formula.
+
+TIME COMPLEXITY:
+----------------
+- Construction of Difference Table: O(n^2)
+- Evaluation of Formula: O(n)
+- Overall: O(n^2)
+
+ADVANTAGES:
+-----------
+- Applicable to both equally and unequally spaced intervals.
+- Truncation error can be calculated with an extra point.
+
+DISADVANTAGES:
+--------------
+- More arithmetic operations involved in calculating the divided differences compared to simple forward/backward differences.

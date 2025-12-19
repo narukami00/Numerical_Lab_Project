@@ -1,0 +1,40 @@
+﻿NEWTON'S BACKWARD INTERPOLATION METHOD
+======================================
+
+OVERVIEW:
+---------
+Newton's Backward Interpolation is used to approximate the value of a function for a given x, using a set of equally spaced data points. It is useful when the point of interpolation lies near the end of the data set.
+
+MATHEMATICAL FOUNDATION:
+------------------------
+Given a set of n values (x0, y0), (x1, y1), ..., (xn, yn) where the x values are equally spaced with interval h.
+v = (x - xn)/h
+
+
+The interpolation formula is:
+y(x) = yn + v*Δyn + (v(v+1)/2!)*Δ^2yn + (v(v+1)(v+2)/3!)*Δ^3yn + ...
+
+
+ALGORITHM STEPS:
+----------------
+1. Input the number of data points n.
+2. Input the x and y values.
+3. Construct the Backward Difference Table.
+4. Calculate v = (x - xn)/h.
+5. Apply Newton's Backward Interpolation formula to calculate the approximate value of y at x.
+
+TIME COMPLEXITY:
+----------------
+- Construction of Difference Table: O(n^2)
+- Evaluation of Formula: O(n)
+- Overall: O(n^2)
+
+ADVANTAGES:
+-----------
+- Efficient for calculating function values near the end of the table.
+- Simple calculation once the difference table is built.
+
+DISADVANTAGES:
+--------------
+- Requires x values to be equally spaced.
+- Not suitable for interpolation near the beginning of the table (use Newton's Forward Interpolation instead).

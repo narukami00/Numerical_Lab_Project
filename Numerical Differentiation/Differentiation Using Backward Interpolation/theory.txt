@@ -1,0 +1,51 @@
+NEWTON'S BACKWARD DIFFERENCE FORMULA FOR DIFFERENTIATION
+========================================================
+
+OVERVIEW:
+---------
+Newton's Backward Difference Formula is used to approximate the derivative of a function given a set of tabulated data points. It is particularly useful when the point of interest is near the end of the dataset and the intervals between x values are equal.
+
+MATHEMATICAL FOUNDATION:
+------------------------
+Given a set of values (x0, y0), (x1, y1), ..., (xn, yn) where x values are equally spaced with step size h.
+Let x be the point where the derivative is to be found.
+let v = (x - xn)/h.
+
+First Derivative f'(x):
+f'(x) = (1/h) * [∇yn + ((2v+1)/2)*∇²yn + ((3v²+6v+2)/6)*∇³yn + ...]
+
+Second Derivative f''(x):
+f''(x) = (1/h²) * [∇²yn + (v+1)*∇³yn + ...]
+
+ALGORITHM STEPS:
+----------------
+1. Input Parameters:
+   - Number of data points (n)
+   - Arrays of x and y values
+   - Target value x where derivative is required
+
+2. Construct Backward Difference Table.
+
+3. Calculation:
+   - Calculate step size h = x[1] - x[0]
+   - Calculate v = (x - x[n-1])/h
+   - Apply the derived formulas for f'(x) and f''(x).
+
+4. Output:
+   - Display the difference table.
+   - Display the calculated first and second derivatives.
+
+TIME COMPLEXITY:
+----------------
+O(n^2) to construct the difference table.
+O(n) to calculate the derivative value.
+
+ADVANTAGES:
+-----------
+- Simple to implement for equally spaced data.
+- Accurate for points near the end of the table.
+
+DISADVANTAGES:
+--------------
+- Requires equally spaced intervals.
+- Accuracy decreases as the point moves away from the end of the table.

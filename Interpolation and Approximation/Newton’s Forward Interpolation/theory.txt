@@ -1,0 +1,38 @@
+﻿NEWTON'S FORWARD INTERPOLATION METHOD
+=====================================
+
+OVERVIEW:
+---------
+Newton's Forward Interpolation is a numerical method used to approximate the value of a function for a given x, using a set of equally spaced data points. It is particularly useful when the point of interpolation lies near the beginning of the data set.
+
+MATHEMATICAL FOUNDATION:
+------------------------
+Given a set of n values (x0, y0), (x1, y1), ..., (xn-1, yn-1) where the x values are equally spaced with interval h.
+u = (x - x0) / h
+
+The forward interpolation formula is:
+y(x) = y0 + u*Δy0 + (u(u-1)/2!)*Δ^2y0 + (u(u-1)(u-2)/3!)*Δ^3y0 + ...
+
+
+ALGORITHM STEPS:
+----------------
+1. Input the number of data points n.
+2. Input the x and y values.
+3. Construct the Forward Difference Table.
+4. Calculate u = (x - x0)/h.
+5. Apply Newton's Forward Interpolation formula to calculate the approximate value of y at x.
+
+TIME COMPLEXITY:
+----------------
+- Construction of Difference Table: O(n^2)
+- Evaluation of Formula: O(n)
+- Overall: O(n^2)
+
+ADVANTAGES:
+-----------
+- Efficient for calculating function values near the start of the table.
+- Simple calculation once the difference table is built.
+
+DISADVANTAGES:
+--------------
+- Requires x values to be equally spaced.
