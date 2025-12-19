@@ -3565,6 +3565,7 @@ Definite integral of the polynomial = 27.75
 #### Theory
 
 LINEAR REGRESSION
+=================
 Linear Regression is a statistical and numerical technique used to model the relationship between two variables by fitting a straight line through a set of observed data points. The objective is to determine the best-fit line that minimizes the difference between actual and predicted values.
 
 In this project, Simple Linear Regression is implemented using the Least Squares Method, where the relationship between an independent variable (x) and a dependent variable (y) is approximated by a straight line.
@@ -3581,11 +3582,13 @@ Error for each data point:
 ei = yi − (a + bxi)
 
 FORMULAS :
+----------
 Let n be the number of data points.
 Slope (b) = (nΣxy − ΣxΣy) / (nΣx² − (Σx)²)
 Intercept (a) = (Σy − bΣx) / n
 
 ALGORITHM STEPS:
+----------
 1.Read number of data points (n)
 2.Read n pairs of x and y values from input file
 3.Store x and y values in dynamic arrays (vectors)
@@ -3596,22 +3599,27 @@ ALGORITHM STEPS:
 8.Print the best-fit linear equation
 
 FILE HANDLING:
+---------------
 Input file: input_linear_regression.txt
 Output file: output_linear_regression.txt
 
 CONVERGENCE:
+--------------
 Produces a unique best-fit line if data variance exists
 Accuracy improves with more data points
 Sensitive to outliers in data
 
 STOPPING CONDITION:
+---------------
 Single computation (non-iterative method)
 Terminates after calculating regression coefficients
 
 TIME COMPLEXITY:
+---------------
 O(n), where n is the number of data points
 
 ADVANTAGES:
+---------------
 Simple and efficient implementation
 Works well for linear relationships
 Requires only basic arithmetic operations
@@ -3619,6 +3627,7 @@ No need for iterative approximation
 Suitable for real-world data analysis
 
 DISADVANTAGES:
+---------------
 Assumes linear relationship between variables
 Sensitive to outliers
 Cannot model non-linear patterns
@@ -3721,6 +3730,7 @@ Best Fit Line: y = 1.3 + 0.9x
 #### Theory
 
 POLYNOMIAL REGRESSION
+=====================
 Polynomial Regression is an extension of linear regression used to model the relationship between an independent variable (x) and a dependent variable (y) when the relationship is non-linear. Instead of fitting a straight line, polynomial regression fits a curve by using polynomial terms of x.It is commonly used when data shows curvature and cannot be accurately represented by a straight line.The general form of a polynomial regression equation is:
 y = a₀ + a₁x + a₂x² + a₃x³ + … + aₙxⁿ
 where
@@ -3728,11 +3738,13 @@ a₀, a₁, a₂, …, aₙ are regression coefficients
 n is the degree of the polynomial
 
 MATHEMATICAL FOUNDATION:
+------------------------
 Polynomial regression is based on the Least Squares Method, where the sum of squared differences between observed and predicted values is minimized.
 Error for each data point:
 ei = yi − ŷi
 
 ALGORITHM STEPS:
+---------------
 1.Read number of data points (n)
 2.Read degree of polynomial (d)
 3.Read n pairs of x and y values
@@ -3744,15 +3756,18 @@ ALGORITHM STEPS:
 9.Display polynomial regression equation
 
 CONVERGENCE:
+---------------
 Produces a unique solution if matrix is non-singular
 Accuracy increases with appropriate degree selection
 Overfitting may occur for very high-degree polynomials
 
 STOPPING CONDITION:
+---------------
 Single computation method
 Terminates after solving the system of equations
 
 ADVANTAGES:
+---------------
 Can model non-linear relationships
 Flexible curve fitting
 Simple extension of linear regression
@@ -3760,6 +3775,7 @@ Widely used in data analysis and prediction
 Does not require non-linear optimization
 
 DISADVANTAGES:
+---------------
 Sensitive to outliers
 Overfitting for high-degree polynomials
 Poor extrapolation outside data range
@@ -3879,15 +3895,18 @@ y = 0.8 + 1.32857x + -0.0714286x^2
 #### Theory
 
 TRANSCENDENTAL REGRESSION
+=========================
 Transcendental Regression is a curve-fitting technique used when the relationship between the independent variable (x) and dependent variable (y) involves transcendental functions such as exponential, logarithmic, or power functions. These functions cannot be represented by simple polynomials.This regression method is widely used in scientific and engineering problems where growth, decay, or scaling behavior is observed.
 
 MATHEMATICAL FOUNDATION:
+---------------
 Transcendental regression is based on the Least Squares Method, similar to linear and polynomial regression.Many transcendental models are transformed into linear form using logarithmic transformations so that linear regression techniques can be applied.
 
 Error for each data point:
 ei = yi − ŷi
 
 ALGORITHM STEPS:
+---------------
 1.Read number of data points (n)
 2.Read n pairs of x and y values
 3.Choose appropriate transcendental model (exponential, logarithmic, or power)
@@ -3898,21 +3917,25 @@ ALGORITHM STEPS:
 8.Display the final transcendental regression equation
 
 CONVERGENCE:
+---------------
 Produces a unique solution if data satisfies model assumptions
 Accuracy depends on correct model selection
 Sensitive to noisy data after transformation
 
 STOPPING CONDITION:
+---------------
 Single computation (non-iterative)
 Terminates after coefficient estimation
 
 ADVANTAGES:
+---------------
 Models exponential and logarithmic behavior effectively
 Suitable for growth and decay phenomena
 Simple implementation using transformations
 Extends applicability beyond polynomial models
 
 DISADVANTAGES:
+---------------
 Requires correct model assumption
 Logarithmic transformation not possible for non-positive values
 Sensitive to outliers
@@ -4024,12 +4047,15 @@ y = 0.999909 * e^(1.00002x)
 #### Theory
 
 RUNGE-KUTTA METHOD
+==================
 The Runge–Kutta (RK) Method is a numerical technique used to obtain approximate solutions of ordinary differential equations (ODEs) with given initial conditions. It is widely used because it provides high accuracy without requiring higher-order derivatives.The RK method improves upon Euler’s method by using weighted averages of slopes at different points within each step.
 
 MATHEMATICAL FOUNDATION:
+---------------
 The exact solution of a differential equation is often difficult or impossible to find analytically. The Runge–Kutta method approximates the solution by expanding the Taylor series and carefully selecting intermediate slopes to achieve higher accuracy.
 
 FOURTH-ORDER RUNGE–KUTTA FORMULA:
+---------------
 Let step size = h
 k₁ = h f(xₙ, yₙ)
 k₂ = h f(xₙ + h/2, yₙ + k₁/2)
@@ -4040,6 +4066,7 @@ Next value:
 yₙ₊₁ = yₙ + (1/6)(k₁ + 2k₂ + 2k₃ + k₄)
 
 ALGORITHM STEPS:
+---------------
 1.Initial values x₀, y₀
 2.Step size h
 3.Final value of x
@@ -4051,16 +4078,19 @@ ALGORITHM STEPS:
 9.Display approximate solution at each step or final value
 
 STOPPING CRITERIA:
+---------------
 x reaches final value
 Required number of steps completed
 
 ADVANTAGES:
+---------------
 High accuracy without complex derivatives
 Easy to implement
 Stable for many practical problems
 Widely used in scientific and engineering applications
 
 DISADVANTAGES:
+---------------
 Requires multiple function evaluations per step
 Fixed step size may not adapt well to stiff equations
 More computation than Euler’s method
