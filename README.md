@@ -1,51 +1,158 @@
 # Numerical Methods Lab Project
 
-**Course:** CSE 2208 - Numerical Methods Lab
-
+**Course:** CSE 2208 - Numerical Methods Lab  
 **Contributors:** 2207006, 2207027, 2207030
+
+---
 
 ## About This Project
 
-  This repository contains comprehensive implementations of fundamental numerical methods used in computational
- mathematics and engineering. The project covers various numerical techniques for solving linear and non-linear
- equations, interpolation, differentiation, integration, curve fitting, and ordinary differential equations.
+This repository contains comprehensive implementations of fundamental numerical methods used in computational mathematics and engineering. The project covers various numerical techniques for solving linear and non-linear equations, interpolation, differentiation, integration, curve fitting, and ordinary differential equations.
 
-   Each method includes:
-   - Detailed theoretical explanation
-   - Complete C++ implementation
-   - Sample input/output for testing
-   - Time complexity analysis
+Each method includes:
+- Detailed theoretical explanation
+- Complete C++ implementation
+- Sample input/output for testing
+- Time complexity analysis
+
+The implementations are designed to be educational, well-documented, and ready to use for solving real-world computational problems. All methods have been tested with multiple test cases to ensure accuracy and reliability.
 
 ---
 
 ## Table of Contents
 
-1. [Solution of Linear Equations](#solution-of-linear-equations)
-   - [Gauss Elimination](#gauss-elimination)
-   - [Gauss Jordan Elimination](#gauss-jordan-elimination)
-   - [LU Decomposition](#lu-decomposition)
-   - [Matrix Inversion](#matrix-inversion)
-2. [Solution of Non-Linear Equations](#solution-of-non-linear-equations)
-   - [Bisection Method](#bisection-method)
-   - [False Position Method](#false-position-method)
-   - [Newton Raphson Method](#newton-raphson-method)
-   - [Secant Method](#secant-method)
-3. [Interpolation and Approximation](#interpolation-and-approximation)
-   - [Newton's Forward Interpolation](#newtons-forward-interpolation)
-   - [Newton's Backward Interpolation](#newtons-backward-interpolation)
-   - [Newton's Divided Difference Interpolation](#newtons-divided-difference-interpolation)
-4. [Numerical Differentiation](#numerical-differentiation)
-   - [Differentiation Using Forward Interpolation](#differentiation-using-forward-interpolation)
-   - [Differentiation Using Backward Interpolation](#differentiation-using-backward-interpolation)
-5. [Numerical Integration](#numerical-integration)
-   - [Simpson's One-Third Rule](#simpsons-one-third-rule)
-   - [Simpson's Three-Eighth Rule](#simpsons-three-eighth-rule)
-6. [Curve Fitting](#curve-fitting)
-   - [Linear Regression](#linear-regression)
-   - [Polynomial Regression](#polynomial-regression)
-   - [Transcendental Regression](#transcendental-regression)
-7. [Ordinary Differential Equation](#ordinary-differential-equation)
-   - [Runge-Kutta Method](#runge-kutta-method)
+## 1. [Solution of Linear Equations](#solution-of-linear-equations)
+- [Gauss Elimination](#gauss-elimination)
+  - [Theory](#gauss-elimination-theory)
+  - [Code](#gauss-elimination-implementation)
+  - [Input](#gauss-elimination-sample-input)
+  - [Output](#gauss-elimination-sample-output)
+
+- [Gauss Jordan Elimination](#gauss-jordan-elimination)
+  - [Theory](#gauss-jordan-elimination-theory)
+  - [Code](#gauss-jordan-elimination-implementation)
+  - [Input](#gauss-jordan-elimination-sample-input)
+  - [Output](#gauss-jordan-elimination-sample-output)
+
+- [LU Decomposition](#lu-decomposition)
+  - [Theory](#lu-decomposition-theory)
+  - [Code](#lu-decomposition-implementation)
+  - [Input](#lu-decomposition-sample-input)
+  - [Output](#lu-decomposition-sample-output)
+
+- [Matrix Inversion](#matrix-inversion)
+  - [Theory](#matrix-inversion-theory)
+  - [Code](#matrix-inversion-implementation)
+  - [Input](#matrix-inversion-sample-input)
+  - [Output](#matrix-inversion-sample-output)
+
+---
+
+## 2. [Solution of Non-Linear Equations](#solution-of-non-linear-equations)
+- [Bisection Method](#bisection-method)
+  - [Theory](#bisection-method-theory)
+  - [Code](#bisection-method-implementation)
+  - [Input](#bisection-method-sample-input)
+  - [Output](#bisection-method-sample-output)
+
+- [False Position Method](#false-position-method)
+  - [Theory](#false-position-method-theory)
+  - [Code](#false-position-method-implementation)
+  - [Input](#false-position-method-sample-input)
+  - [Output](#false-position-method-sample-output)
+
+- [Newton Raphson Method](#newton-raphson-method)
+  - [Theory](#newton-raphson-method-theory)
+  - [Code](#newton-raphson-method-implementation)
+  - [Input](#newton-raphson-method-sample-input)
+  - [Output](#newton-raphson-method-sample-output)
+
+- [Secant Method](#secant-method)
+  - [Theory](#secant-method-theory)
+  - [Code](#secant-method-implementation)
+  - [Input](#secant-method-sample-input)
+  - [Output](#secant-method-sample-output)
+
+---
+
+## 3. [Interpolation and Approximation](#interpolation-and-approximation)
+- [Newton's Forward Interpolation](#newtons-forward-interpolation)
+  - [Theory](#newtons-forward-interpolation-theory)
+  - [Code](#newtons-forward-interpolation-implementation)
+  - [Input](#newtons-forward-interpolation-sample-input)
+  - [Output](#newtons-forward-interpolation-sample-output)
+
+- [Newton's Backward Interpolation](#newtons-backward-interpolation)
+  - [Theory](#newtons-backward-interpolation-theory)
+  - [Code](#newtons-backward-interpolation-implementation)
+  - [Input](#newtons-backward-interpolation-sample-input)
+  - [Output](#newtons-backward-interpolation-sample-output)
+
+- [Newton's Divided Difference Interpolation](#newtons-divided-difference-interpolation)
+  - [Theory](#newtons-divided-difference-interpolation-theory)
+  - [Code](#newtons-divided-difference-interpolation-implementation)
+  - [Input](#newtons-divided-difference-interpolation-sample-input)
+  - [Output](#newtons-divided-difference-interpolation-sample-output)
+
+---
+
+## 4. [Numerical Differentiation](#numerical-differentiation)
+- [Differentiation Using Forward Interpolation](#differentiation-using-forward-interpolation)
+  - [Theory](#differentiation-using-forward-interpolation-theory)
+  - [Code](#differentiation-using-forward-interpolation-implementation)
+  - [Input](#differentiation-using-forward-interpolation-sample-input)
+  - [Output](#differentiation-using-forward-interpolation-sample-output)
+
+- [Differentiation Using Backward Interpolation](#differentiation-using-backward-interpolation)
+  - [Theory](#differentiation-using-backward-interpolation-theory)
+  - [Code](#differentiation-using-backward-interpolation-implementation)
+  - [Input](#differentiation-using-backward-interpolation-sample-input)
+  - [Output](#differentiation-using-backward-interpolation-sample-output)
+
+---
+
+## 5. [Numerical Integration](#numerical-integration)
+- [Simpson's One-Third Rule](#simpsons-one-third-rule)
+  - [Theory](#simpsons-one-third-rule-theory)
+  - [Code](#simpsons-one-third-rule-implementation)
+  - [Input](#simpsons-one-third-rule-sample-input)
+  - [Output](#simpsons-one-third-rule-sample-output)
+
+- [Simpson's Three-Eighth Rule](#simpsons-three-eighth-rule)
+  - [Theory](#simpsons-three-eighth-rule-theory)
+  - [Code](#simpsons-three-eighth-rule-implementation)
+  - [Input](#simpsons-three-eighth-rule-sample-input)
+  - [Output](#simpsons-three-eighth-rule-sample-output)
+
+---
+
+## 6. [Curve Fitting](#curve-fitting)
+- [Linear Regression](#linear-regression)
+  - [Theory](#linear-regression-theory)
+  - [Code](#linear-regression-implementation)
+  - [Input](#linear-regression-sample-input)
+  - [Output](#linear-regression-sample-output)
+
+- [Polynomial Regression](#polynomial-regression)
+  - [Theory](#polynomial-regression-theory)
+  - [Code](#polynomial-regression-implementation)
+  - [Input](#polynomial-regression-sample-input)
+  - [Output](#polynomial-regression-sample-output)
+
+- [Transcendental Regression](#transcendental-regression)
+  - [Theory](#transcendental-regression-theory)
+  - [Code](#transcendental-regression-implementation)
+  - [Input](#transcendental-regression-sample-input)
+  - [Output](#transcendental-regression-sample-output)
+
+---
+
+## 7. [Ordinary Differential Equation](#ordinary-differential-equation)
+- [Runge-Kutta Method](#runge-kutta-method)
+  - [Theory](#runge-kutta-method-theory)
+  - [Code](#runge-kutta-method-implementation)
+  - [Input](#runge-kutta-method-sample-input)
+  - [Output](#runge-kutta-method-sample-output)
 
 ---
 
@@ -161,8 +268,11 @@ Project/
 
 ## Solution of Linear Equations
 
+---
 
 ### Gauss Elimination
+
+<a id="gauss-elimination-theory"></a>
 
 #### Theory
 
@@ -211,6 +321,8 @@ DISADVANTAGES:
 - Susceptible to round-off errors
 - Fails if pivot element is zero
 - Not suitable for large sparse matrices
+
+<a id="gauss-elimination-implementation"></a>
 
 #### Implementation
 
@@ -315,6 +427,8 @@ int main(){
 }
 ```
 
+<a id="gauss-elimination-sample-input"></a>
+
 #### Sample Input
 
 ```
@@ -335,6 +449,8 @@ int main(){
 2 4 6 12
 1 2 3 8
 ```
+
+<a id="gauss-elimination-sample-output"></a>
 
 #### Sample Output
 
@@ -361,6 +477,8 @@ No solution
 ---
 
 ### Gauss Jordan Elimination
+
+<a id="gauss-jordan-elimination-theory"></a>
 
 #### Theory
 
@@ -414,6 +532,8 @@ DISADVANTAGES:
 - More computational steps than Gauss Elimination
 - Still susceptible to round-off errors
 - Requires non-zero pivot elements
+
+<a id="gauss-jordan-elimination-implementation"></a>
 
 #### Implementation
 
@@ -515,6 +635,8 @@ int main(){
 }
 ```
 
+<a id="gauss-jordan-elimination-sample-input"></a>
+
 #### Sample Input
 
 ```
@@ -535,6 +657,8 @@ int main(){
 2 4 6 12
 1 2 3 8
 ```
+
+<a id="gauss-jordan-elimination-sample-output"></a>
 
 #### Sample Output
 
@@ -561,6 +685,8 @@ No solution
 ---
 
 ### LU Decomposition
+
+<a id="lu-decomposition-theory"></a>
 
 #### Theory
 
@@ -633,6 +759,8 @@ DISADVANTAGES:
 - Requires additional storage for L and U
 - Not all matrices have LU decomposition
 - May need pivoting for numerical stability
+
+<a id="lu-decomposition-implementation"></a>
 
 #### Implementation
 
@@ -760,6 +888,8 @@ int main(){
 }
 ```
 
+<a id="lu-decomposition-sample-input"></a>
+
 #### Sample Input
 
 ```
@@ -780,6 +910,8 @@ int main(){
 2 4 6 12
 1 2 3 8
 ```
+
+<a id="lu-decomposition-sample-output"></a>
 
 #### Sample Output
 
@@ -806,6 +938,8 @@ No solution
 ---
 
 ### Matrix Inversion
+
+<a id="matrix-inversion-theory"></a>
 
 #### Theory
 
@@ -895,6 +1029,8 @@ cond(A) = ||A|| * ||A^(-1)||
 
 - cond(A) ≈ 1: Well-conditioned (stable)
 - cond(A) >> 1: Ill-conditioned (unstable)
+
+<a id="matrix-inversion-implementation"></a>
 
 #### Implementation
 
@@ -1061,6 +1197,8 @@ int main(){
 }
 ```
 
+<a id="matrix-inversion-sample-input"></a>
+
 #### Sample Input
 
 ```
@@ -1085,6 +1223,8 @@ int main(){
 1 2 3
 6 12 8
 ```
+
+<a id="matrix-inversion-sample-output"></a>
 
 #### Sample Output
 
@@ -1112,7 +1252,11 @@ No solution
 
 ## Solution of Non-Linear Equations
 
+---
+
 ### Bisection Method
+
+<a id="bisection-method-theory"></a>
 
 #### Theory
 
@@ -1192,6 +1336,8 @@ SPECIAL CASES:
 2. If f(b) = 0: b is the root
 3. If f(a) * f(b) > 0: method fails (no guarantee of root)
 4. Multiple roots in interval: finds only one
+
+<a id="bisection-method-implementation"></a>
 
 #### Implementation
 
@@ -1396,6 +1542,8 @@ int main(){
 
 ```
 
+<a id="bisection-method-sample-input"></a>
+
 #### Sample Input
 
 ```
@@ -1410,6 +1558,8 @@ int main(){
 1 0 -5 0 4
 -3 3 0.1
 ```
+
+<a id="bisection-method-sample-output"></a>
 
 #### Sample Output
 
@@ -1439,6 +1589,8 @@ Root found at x = 2 | function value close enough to 0
 ---
 
 ### False Position Method
+
+<a id="false-position-method-theory"></a>
 
 #### Theory
 
@@ -1525,6 +1677,8 @@ SPECIAL CONSIDERATIONS:
 2. Initial bracket must contain root
 3. Works best when function is nearly linear
 4. Performance degrades for highly nonlinear functions
+
+<a id="false-position-method-implementation"></a>
 
 #### Implementation
 
@@ -1729,6 +1883,8 @@ int main(){
 
 ```
 
+<a id="false-position-method-sample-input"></a>
+
 #### Sample Input
 
 ```
@@ -1743,6 +1899,8 @@ int main(){
 1 0 -5 0 4
 -3 3 0.1
 ```
+
+<a id="false-position-method-sample-output"></a>
 
 #### Sample Output
 
@@ -1772,6 +1930,8 @@ Root found at x = 2 | function value close enough to 0
 ---
 
 ### Newton Raphson Method
+
+<a id="newton-raphson-method-theory"></a>
 
 #### Theory
 
@@ -1867,6 +2027,8 @@ INITIAL GUESS SELECTION:
 - Use bisection for few iterations first
 - Domain knowledge of the problem
 - Multiple starting points for comparison
+
+<a id="newton-raphson-method-implementation"></a>
 
 #### Implementation
 
@@ -2006,6 +2168,8 @@ int main(){
 
 ```
 
+<a id="newton-raphson-method-sample-input"></a>
+
 #### Sample Input
 
 ```
@@ -2020,6 +2184,8 @@ int main(){
 1 0 -5 0 4
 -3 3 0.1
 ```
+
+<a id="newton-raphson-method-sample-output"></a>
 
 #### Sample Output
 
@@ -2049,6 +2215,8 @@ Root 4 = 2 After 1 iterations
 ---
 
 ### Secant Method
+
+<a id="secant-method-theory"></a>
 
 #### Theory
 
@@ -2174,6 +2342,8 @@ PRACTICAL CONSIDERATIONS:
 3. Check for oscillation between two values
 4. Consider switching to bisection if diverging
 5. Use multiple starting points for reliability
+
+<a id="secant-method-implementation"></a>
 
 #### Implementation
 
@@ -2304,6 +2474,8 @@ int main(){
 
 ```
 
+<a id="secant-method-sample-input"></a>
+
 #### Sample Input
 
 ```
@@ -2318,6 +2490,8 @@ int main(){
 1 0 -5 0 4
 -3 3 0.1
 ```
+
+<a id="secant-method-sample-output"></a>
 
 #### Sample Output
 
@@ -2348,11 +2522,17 @@ Root 4 = 2 After 6 iterations
 
 ## Interpolation and Approximation
 
+---
+
 ### Newton's Forward Interpolation
+
+<a id="newtons-forward-interpolation-theory"></a>
 
 #### Theory
 
 File not found or unreadable
+
+<a id="newtons-forward-interpolation-implementation"></a>
 
 #### Implementation
 
@@ -2360,11 +2540,15 @@ File not found or unreadable
 File not found or unreadable
 ```
 
+<a id="newtons-forward-interpolation-sample-input"></a>
+
 #### Sample Input
 
 ```
 File not found or unreadable
 ```
+
+<a id="newtons-forward-interpolation-sample-output"></a>
 
 #### Sample Output
 
@@ -2377,6 +2561,8 @@ File not found or unreadable
 ---
 
 ### Newton's Backward Interpolation
+
+<a id="newtons-backward-interpolation-theory"></a>
 
 #### Theory
 
@@ -2418,6 +2604,8 @@ DISADVANTAGES:
 --------------
 - Requires x values to be equally spaced.
 - Not suitable for interpolation near the beginning of the table (use Newton's Forward Interpolation instead).
+
+<a id="newtons-backward-interpolation-implementation"></a>
 
 #### Implementation
 
@@ -2484,6 +2672,8 @@ int main(){
 
 ```
 
+<a id="newtons-backward-interpolation-sample-input"></a>
+
 #### Sample Input
 
 ```
@@ -2493,6 +2683,8 @@ int main(){
 33
 
 ```
+
+<a id="newtons-backward-interpolation-sample-output"></a>
 
 #### Sample Output
 
@@ -2514,6 +2706,8 @@ Interpolated value at x = 33.00 is f(x) = 33.27
 ---
 
 ### Newton's Divided Difference Interpolation
+
+<a id="newtons-divided-difference-interpolation-theory"></a>
 
 #### Theory
 
@@ -2560,6 +2754,8 @@ ADVANTAGES:
 DISADVANTAGES:
 --------------
 - More arithmetic operations involved in calculating the divided differences compared to simple forward/backward differences.
+
+<a id="newtons-divided-difference-interpolation-implementation"></a>
 
 #### Implementation
 
@@ -2615,6 +2811,8 @@ int main(){
 
 ```
 
+<a id="newtons-divided-difference-interpolation-sample-input"></a>
+
 #### Sample Input
 
 ```
@@ -2624,6 +2822,8 @@ int main(){
 2
 
 ```
+
+<a id="newtons-divided-difference-interpolation-sample-output"></a>
 
 #### Sample Output
 
@@ -2651,7 +2851,11 @@ Truncatation error: 0.062916
 
 ## Numerical Differentiation
 
+---
+
 ### Differentiation Using Forward Interpolation
+
+<a id="differentiation-using-forward-interpolation-theory"></a>
 
 #### Theory
 
@@ -2707,6 +2911,8 @@ DISADVANTAGES:
 - Requires equally spaced intervals.
 - Accuracy decreases as the point moves away from the beginning of the table.
 
+<a id="differentiation-using-forward-interpolation-implementation"></a>
+
 #### Implementation
 
 ```cpp
@@ -2761,6 +2967,8 @@ int main(){
 }
 ```
 
+<a id="differentiation-using-forward-interpolation-sample-input"></a>
+
 #### Sample Input
 
 ```
@@ -2769,6 +2977,8 @@ int main(){
 1 8 27 64 125
 1.5
 ```
+
+<a id="differentiation-using-forward-interpolation-sample-output"></a>
 
 #### Sample Output
 
@@ -2793,6 +3003,8 @@ f''(x) = 9
 ---
 
 ### Differentiation Using Backward Interpolation
+
+<a id="differentiation-using-backward-interpolation-theory"></a>
 
 #### Theory
 
@@ -2847,6 +3059,8 @@ DISADVANTAGES:
 --------------
 - Requires equally spaced intervals.
 - Accuracy decreases as the point moves away from the end of the table.
+
+<a id="differentiation-using-backward-interpolation-implementation"></a>
 
 #### Implementation
 
@@ -2903,6 +3117,8 @@ int main(){
 }
 ```
 
+<a id="differentiation-using-backward-interpolation-sample-input"></a>
+
 #### Sample Input
 
 ```
@@ -2911,6 +3127,8 @@ int main(){
 1 8 27 64 125
 5
 ```
+
+<a id="differentiation-using-backward-interpolation-sample-output"></a>
 
 #### Sample Output
 
@@ -2936,7 +3154,11 @@ f''(x) = 30
 
 ## Numerical Integration
 
+---
+
 ### Simpson's One-Third Rule
+
+<a id="simpsons-one-third-rule-theory"></a>
 
 #### Theory
 
@@ -2988,6 +3210,8 @@ ADVANTAGES:
 DISADVANTAGES:
 --------------
 - The number of subintervals 'n' must be even.
+
+<a id="simpsons-one-third-rule-implementation"></a>
 
 #### Implementation
 
@@ -3043,6 +3267,8 @@ int main(){
 }
 ```
 
+<a id="simpsons-one-third-rule-sample-input"></a>
+
 #### Sample Input
 
 ```
@@ -3053,6 +3279,8 @@ int main(){
 10
 
 ```
+
+<a id="simpsons-one-third-rule-sample-output"></a>
 
 #### Sample Output
 
@@ -3073,6 +3301,8 @@ Definite integral of the polynomial = 30
 ---
 
 ### Simpson's Three-Eighth Rule
+
+<a id="simpsons-three-eighth-rule-theory"></a>
 
 #### Theory
 
@@ -3128,6 +3358,8 @@ DISADVANTAGES:
 - The number of subintervals 'n' must be a multiple of 3.
 - Slightly more complex computation than the 1/3 rule.
 
+<a id="simpsons-three-eighth-rule-implementation"></a>
+
 #### Implementation
 
 ```cpp
@@ -3182,6 +3414,8 @@ int main(){
 }
 ```
 
+<a id="simpsons-three-eighth-rule-sample-input"></a>
+
 #### Sample Input
 
 ```
@@ -3191,6 +3425,8 @@ int main(){
 0
 6
 ```
+
+<a id="simpsons-three-eighth-rule-sample-output"></a>
 
 #### Sample Output
 
@@ -3212,7 +3448,11 @@ Definite integral of the polynomial = 27.75
 
 ## Curve Fitting
 
+---
+
 ### Linear Regression
+
+<a id="linear-regression-theory"></a>
 
 #### Theory
 
@@ -3276,6 +3516,8 @@ Sensitive to outliers
 Cannot model non-linear patterns
 Accuracy depends on quality of input data
 
+<a id="linear-regression-implementation"></a>
+
 #### Implementation
 
 ```cpp
@@ -3329,6 +3571,8 @@ int main() {
 
 ```
 
+<a id="linear-regression-sample-input"></a>
+
 #### Sample Input
 
 ```
@@ -3340,6 +3584,8 @@ int main() {
 5 6
 
 ```
+
+<a id="linear-regression-sample-output"></a>
 
 #### Sample Output
 
@@ -3361,6 +3607,8 @@ Best Fit Line: y = 1.3 + 0.9x
 ---
 
 ### Polynomial Regression
+
+<a id="polynomial-regression-theory"></a>
 
 #### Theory
 
@@ -3409,6 +3657,8 @@ Overfitting for high-degree polynomials
 Poor extrapolation outside data range
 Increased computational complexity
 Requires careful degree selection
+
+<a id="polynomial-regression-implementation"></a>
 
 #### Implementation
 
@@ -3478,6 +3728,8 @@ int main() {
 
 ```
 
+<a id="polynomial-regression-sample-input"></a>
+
 #### Sample Input
 
 ```
@@ -3489,6 +3741,8 @@ int main() {
 5 6
 
 ```
+
+<a id="polynomial-regression-sample-output"></a>
 
 #### Sample Output
 
@@ -3511,6 +3765,8 @@ y = 0.8 + 1.32857x + -0.0714286x^2
 ---
 
 ### Transcendental Regression
+
+<a id="transcendental-regression-theory"></a>
 
 #### Theory
 
@@ -3553,6 +3809,8 @@ Requires correct model assumption
 Logarithmic transformation not possible for non-positive values
 Sensitive to outliers
 Limited to specific functional forms
+
+<a id="transcendental-regression-implementation"></a>
 
 #### Implementation
 
@@ -3611,6 +3869,8 @@ int main() {
 
 ```
 
+<a id="transcendental-regression-sample-input"></a>
+
 #### Sample Input
 
 ```
@@ -3622,6 +3882,8 @@ int main() {
 5 148.413
 
 ```
+
+<a id="transcendental-regression-sample-output"></a>
 
 #### Sample Output
 
@@ -3645,7 +3907,11 @@ y = 0.999909 * e^(1.00002x)
 
 ## Ordinary Differential Equation
 
+---
+
 ### Runge-Kutta Method
+
+<a id="runge-kutta-method-theory"></a>
 
 #### Theory
 
@@ -3690,6 +3956,8 @@ DISADVANTAGES:
 Requires multiple function evaluations per step
 Fixed step size may not adapt well to stiff equations
 More computation than Euler’s method
+
+<a id="runge-kutta-method-implementation"></a>
 
 #### Implementation
 
@@ -3744,12 +4012,16 @@ int main()
 
 ```
 
+<a id="runge-kutta-method-sample-input"></a>
+
 #### Sample Input
 
 ```
 0 1 0.1 3
 
 ```
+
+<a id="runge-kutta-method-sample-output"></a>
 
 #### Sample Output
 
