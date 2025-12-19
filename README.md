@@ -2530,14 +2530,112 @@ Root 4 = 2 After 6 iterations
 
 #### Theory
 
-File not found or unreadable
+NEWTON'S FORWARD INTERPOLATION METHOD
+=====================================
+
+OVERVIEW:
+---------
+Newton's Forward Interpolation is a numerical method used to approximate the value of a function for a given x, using a set of equally spaced data points. It is particularly useful when the point of interpolation lies near the beginning of the data set.
+
+MATHEMATICAL FOUNDATION:
+------------------------
+Given a set of n values (x0, y0), (x1, y1), ..., (xn-1, yn-1) where the x values are equally spaced with interval h.
+u = (x - x0) / h
+
+The forward interpolation formula is:
+y(x) = y0 + u*Δy0 + (u(u-1)/2!)*Δ^2y0 + (u(u-1)(u-2)/3!)*Δ^3y0 + ...
+
+ALGORITHM STEPS:
+----------------
+1. Input the number of data points n.
+2. Input the x and y values.
+3. Construct the Forward Difference Table.
+4. Calculate u = (x - x0)/h.
+5. Apply Newton's Forward Interpolation formula to calculate the approximate value of y at x.
+
+TIME COMPLEXITY:
+----------------
+- Construction of Difference Table: O(n^2)
+- Evaluation of Formula: O(n)
+- Overall: O(n^2)
+
+ADVANTAGES:
+-----------
+- Efficient for calculating function values near the start of the table.
+- Simple calculation once the difference table is built.
+
+DISADVANTAGES:
+--------------
+- Requires x values to be equally spaced.
 
 <a id="newtons-forward-interpolation-implementation"></a>
 
 #### Implementation
 
 ```cpp
-File not found or unreadable
+#include<bits/stdc++.h>
+using namespace std;
+
+double fact(int n) {
+    double f = 1.0;
+    for (int i=2; i<=n; i++) f *= i;
+    return f;
+}
+
+int main() {
+    freopen("input.txt", "r", stdin);
+    freopen("output.txt", "w", stdout);
+    
+    cout<<"Enter num of data points: ";
+    int n; cin>>n;
+
+    cout<<"Enter x values (ascending, equally spaced): ";
+    vector<double> xs(n);
+    for (int i=0; i<n; i++) cin>>xs[i];
+
+    cout<<"Enter y values: ";
+    vector<double> ys(n);
+    for (int i=0; i<n; i++) cin>>ys[i];
+
+
+    cout<<"Enter value to be interpolated: ";
+    double x; cin >> x;
+
+    //forward difference table
+    vector<vector<double>> diff(n, vector<double>(n));
+    for (int i=0; i<n; i++) diff[i][0] = ys[i];
+    for (int j = 1; j < n; ++j) {
+        for (int i=0; i+j<n; i++) {
+            diff[i][j] = diff[i+1][j-1] - diff[i][j-1];
+        }
+    }
+
+    double h=xs[1]-xs[0];
+    double u=(x-xs[0])/h;
+
+    //Forward interpolation
+    double ans=diff[0][0];
+    double u_prod = 1.0;
+    for (int k=1; k<n; ++k){
+        u_prod *= (u-(k-1));
+        ans += (u_prod/fact(k))*diff[0][k];
+    }
+
+    
+
+    // Output
+    cout<<fixed<<setprecision(2);
+    cout<<"\nForward Difference Table:\n";
+    for (int i=0; i<n; i++) {
+        for (int j=0; j<n-i; j++) {
+            cout<<setw(12) << diff[i][j] << ' ';
+        }
+        cout<<'\n';
+    }
+
+    cout<<"\nInterpolated value at x = " << x << " f(x) = " << ans << "\n";
+    return 0;
+}
 ```
 
 <a id="newtons-forward-interpolation-sample-input"></a>
@@ -2545,7 +2643,10 @@ File not found or unreadable
 #### Sample Input
 
 ```
-File not found or unreadable
+4
+3 5 7 9
+180 150 120 90
+4
 ```
 
 <a id="newtons-forward-interpolation-sample-output"></a>
@@ -2553,7 +2654,14 @@ File not found or unreadable
 #### Sample Output
 
 ```
-File not found or unreadable
+Enter num of data points: Enter x values (ascending, equally spaced): Enter y values: Enter value to be interpolated: 
+Forward Difference Table:
+      180.00       -30.00         0.00         0.00 
+      150.00       -30.00         0.00 
+      120.00       -30.00 
+       90.00 
+
+Interpolated value at x = 4.00 f(x) = 165.00
 ```
 
 [Back to Top](#numerical-methods-lab-project)
